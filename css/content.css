@@ -1,0 +1,499 @@
+/* T2Editor Content Display Styles */
+
+/* 미디어 블록 */
+.t2-media-block {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.t2-media-block img,
+.t2-media-block iframe,
+.t2-media-block video {
+    border-radius: 15px !important;
+    border: none !important;
+    margin: 0 auto !important;
+}
+
+/* 코드 블록 */
+.t2-code-block {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Consolas','Monaco',monospace;
+    position: relative;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    overflow-x: auto;
+}
+
+.t2-code-block .code-placeholder {
+    color: #888;
+    cursor: text;
+}
+
+.t2-code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.t2-code-block code {
+    outline: none;
+    display: block;
+    min-height: 1em;
+    font-family: 'Consolas','Monaco',monospace;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 파일 블록 */
+.t2-file-block {
+    margin: 10px 0;
+}
+
+.file-container {
+    width: 100%;
+    min-width: 240px;
+    max-width: 380px;
+    aspect-ratio: 4/1;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #cdcdcd;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto',Arial,sans-serif;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+}
+
+.t2-file-block .file-container:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.t2-file-block .file-icon {
+    position: relative;
+    width: 36px;
+    height: 45px;
+    background-color: #E8B56F;
+    border-radius: 6px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.t2-file-block .file-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 33%;
+    background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 100%);
+}
+
+.t2-file-block .file-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #fff #fff transparent transparent;
+}
+
+.t2-file-block .file-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.t2-file-block .file-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(0,0,0,.87);
+    margin: 0 0 6px 0;
+    letter-spacing: .15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.t2-file-block .file-details {
+    color: rgba(0,0,0,.6);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: .25px;
+    display: flex;
+    gap: 12px;
+}
+
+.t2-file-block .file-details span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* 오디오 파일 */
+.audio-file-container {
+    width: 100%;
+    min-width: 240px;
+    max-width: 380px;
+    aspect-ratio: 4/1;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #cdcdcd;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto',Arial,sans-serif;
+    transition: opacity 0.2s ease;
+    box-sizing: border-box;
+    padding-right: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.audio-file-container:hover {
+    opacity: .95;
+}
+
+.audio-file-icon {
+    width: 36px;
+    height: 45px;
+    background-color: #7C4DFF;
+    border-radius: 6px;
+    margin-right: 20px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.audio-file-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E") center/contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E") center/contain no-repeat;
+    opacity: .9;
+}
+
+.audio-file-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #fff #fff transparent transparent;
+}
+
+.audio-file-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.audio-file-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(0,0,0,.87);
+    margin: 0 0 6px 0;
+    letter-spacing: .15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.audio-file-details {
+    color: rgba(0,0,0,.6);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: .25px;
+    display: flex;
+    gap: 12px;
+}
+
+.audio-file-details span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.audio-duration {
+    color: #7C4DFF;
+    font-weight: 500;
+    min-width: 45px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.audio-player {
+    display: none;
+}
+
+/* 테이블 반응형 */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.t2-table.t2-table-large {
+    min-width: 800px;
+}
+
+/* 테이블 */
+.t2-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.t2-table th,
+.t2-table td {
+    border: 1px solid #eaeaea;
+    padding: 10px 12px;
+    vertical-align: top;
+    position: relative;
+    min-width: 50px;
+}
+
+.t2-table th {
+    background-color: #f5f7fa;
+    font-weight: 600;
+    color: #334155;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.t2-table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.t2-table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.t2-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.t2-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* 테이블 호버 효과 (읽기 전용에서는 제거) */
+.t2-table tr:hover {
+    background-color: rgba(1,135,254,.02);
+}
+
+/* 링크 스타일 */
+a {
+    color: #4A90E2;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #357ABD;
+    text-decoration: underline;
+}
+
+/* 인용문 */
+blockquote {
+    border-left: 4px solid #0187fe;
+    margin: 16px 0;
+    padding: 16px 20px;
+    background: #f8f9ff;
+    font-style: italic;
+    color: #555;
+}
+
+/* 리스트 */
+ul, ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+li {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .file-container,
+    .audio-file-container {
+        max-width: 100%;
+        min-width: 280px;
+    }
+    
+    .t2-file-block .file-name,
+    .audio-file-name {
+        font-size: 16px;
+    }
+    
+    .t2-file-block .file-details,
+    .audio-file-details {
+        font-size: 11px;
+    }
+    
+    .t2-table {
+        font-size: 14px;
+    }
+    
+    .t2-table th,
+    .t2-table td {
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .file-container,
+    .audio-file-container {
+        min-width: 240px;
+        padding: 0 15px;
+    }
+    
+    .t2-file-block .file-icon,
+    .audio-file-icon {
+        width: 32px;
+        height: 40px;
+        margin-right: 15px;
+    }
+    
+    .t2-file-block .file-name,
+    .audio-file-name {
+        font-size: 15px;
+    }
+    
+    .t2-code-block {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* 인쇄 스타일 */
+@media print {
+    .t2-media-block img {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+    }
+    
+    .t2-media-block iframe {
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .t2-media-block iframe::after {
+        content: "비디오: " attr(src);
+        display: block;
+        font-size: 12px;
+        color: #666;
+    }
+    
+    .file-container,
+    .audio-file-container {
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        box-shadow: none;
+    }
+    
+    .t2-table {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .t2-code-block {
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
+
+/* 다크모드 지원 */
+@media (prefers-color-scheme: dark) {
+    .file-container,
+    .audio-file-container {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+    
+    .t2-file-block .file-name,
+    .audio-file-name {
+        color: rgba(255,255,255,.87);
+    }
+    
+    .t2-file-block .file-details,
+    .audio-file-details {
+        color: rgba(255,255,255,.6);
+    }
+    
+    .t2-table {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .t2-table th,
+    .t2-table td {
+        border-color: #444;
+    }
+    
+    .t2-table th {
+        background-color: #383838;
+        color: #e0e0e0;
+    }
+    
+    .t2-code-block {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+    
+    a {
+        color: #4fc3f7;
+    }
+    
+    a:hover {
+        color: #29b6f6;
+    }
+    
+    blockquote {
+        background: #1a1a2e;
+        color: #ccc;
+        border-left-color: #0187fe;
+    }
+}
